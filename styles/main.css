@@ -1,0 +1,24 @@
+/* :root é onde definimos nossas variáveis de design (CSS Avançado) */
+:root {
+  --cor-primaria: #005A8D;     /* Um azul corporativo */
+  --cor-secundaria: #FFA500;  /* Um laranja para destaque (doações) */
+  --cor-texto: #333;
+  --cor-fundo: #f9f9f9;
+  --fonte-principal: 'Arial', sans-serif; /* Mude para Roboto, etc. se importar fontes */
+  --tamanho-container: 1100px;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+/* (Vamos adicionar os estilos do .card-projeto aqui depois) */
