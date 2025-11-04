@@ -14,14 +14,16 @@ async function carregarProjetosDestaque() {
     containerProjetos.innerHTML = ''; // Limpa o container
 
     projetosDestaque.forEach(projeto => {
+      // Cria o HTML do "card" do projeto
       const cardHTML = `
         <article class="card-projeto">
           <img src="${projeto.imagem_capa}" alt="Capa do projeto ${projeto.titulo}">
           <h3>${projeto.titulo}</h3>
           <p>${projeto.resumo}</p>
-          <a href="pages/projetos.html?id=${projeto.id}">Ver Mais</a>
+          <a href="/pages/projeto-detalhe.html?id=${projeto.id}">Ver Mais</a>
         </article>
       `;
+      // Adiciona o novo card ao container
       containerProjetos.innerHTML += cardHTML;
     });
   }
