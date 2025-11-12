@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Gente do Bem</title>
+  
+  <link rel="stylesheet" href="/styles/main.css">
+  <script src="/scripts/global.js" defer></script>
+</head>
+<body>
+
+  <header id="main-header"></header>
+
+  <main>
+    <section class="contato-container" style="max-width: 600px; margin: 0 auto; padding: 2rem 1rem;">
+      
+      <h1 style="text-align: center; margin-bottom: 1rem;">Fale Conosco</h1>
+      
+      <p style="margin-bottom: 2rem; color: #555;">
+        Quer ser voluntário ou tem dúvidas sobre como doar? Mande uma mensagem!
+      </p>
+      
+      <form style="display: flex; flex-direction: column; gap: 1rem;">
+        
+        <div>
+          <label for="nome" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Seu Nome</label>
+          <input type="text" id="nome" placeholder="Digite seu nome" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+
+        <div>
+          <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Seu E-mail</label>
+          <input type="email" id="email" placeholder="exemplo@email.com" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+
+        <div>
+          <label for="mensagem" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Mensagem</label>
+          <textarea id="mensagem" rows="5" placeholder="Como podemos ajudar?" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px; font-family: inherit;"></textarea>
+        </div>
+
+        <button type="submit" class="botao-destaque" style="border: none; cursor: pointer; font-size: 1rem;">Enviar Mensagem</button>
+      
+      </form>
+
+      <div style="margin-top: 3rem; text-align: center; color: #666; border-top: 1px solid #eee; padding-top: 2rem;">
+        <p><strong>Email:</strong> contato@gentedobem.org.br</p>
+        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="main-footer"></footer>
+
+</body>
+</html>

@@ -10,10 +10,7 @@ async function carregarDetalhesDoProjeto() {
 
   try {
     // 1. LER O ID DA URL
-    // Pega os "parâmetros de busca" da URL (ex: ?id=proj-01)
     const params = new URLSearchParams(window.location.search);
-    
-    // Pega o valor específico do parâmetro "id"
     const projetoId = params.get('id');
 
     if (!projetoId) {
@@ -24,7 +21,6 @@ async function carregarDetalhesDoProjeto() {
     const projetos = await getProjetos(); // Função que já existe no api.js
 
     // 3. ENCONTRAR O PROJETO ESPECÍFICO
-    // Usa o método .find() para achar o projeto cujo ID bate com o da URL
     const projeto = projetos.find(p => p.id === projetoId);
 
     if (!projeto) {
@@ -42,35 +38,33 @@ async function carregarDetalhesDoProjeto() {
 
 function renderizarProjeto(projeto, container) {
   // Muda o <title> da página para o nome do projeto
-  document.title = `Nome da ONG - ${projeto.titulo}`;
+  document.title = `Gente do Bem - ${projeto.titulo}`;
 
-  // Cria o HTML com todos os detalhes do projeto
-  // (Note que usamos as chaves do nosso projetos.json)
+  // Cria o HTML LIMPO e ATUALIZADO
   const projetoHTML = `
     <article class="detalhe-artigo">
-      <h1>${projeto.titulo}</h1>
+      
+      <h1 style="text-align: center; margin-bottom: 1.5rem; text-transform: none;">${projeto.titulo}</h1>
       
       <img src="${projeto.imagem_capa}" alt="Imagem de capa do projeto ${projeto.titulo}" class="detalhe-imagem-capa">
       
       <div class="detalhe-conteudo">
         <h2>Sobre o Projeto</h2>
-        <p>${projeto.resumo}</p>
         
-        <p><strong>Status:</strong> ${projeto.status}</p>
-        
-        <h2>Nosso Impacto</h2>
-        <p>Este projeto precisa de voluntários e doações para continuar ativo.</p>
+        <p style="text-align: justify; line-height: 1.6;">${projeto.resumo}</p>
         
         <div class="detalhe-metas">
-          <div class="meta-card">
-            <h3>Meta de Arrecadação</h3>
-            <p>R$ ${projeto.valor_arrecadado.toFixed(2)} / <strong>R$ ${projeto.meta_arrecadacao.toFixed(2)}</strong></p>
-            </div>
-          <div class="meta-card">
+          
+          <div class="meta-card" style="width: 100%; text-align: center;">
             <h3>Voluntários</h3>
-            <p><strong>${projeto.vagas_voluntarios}</strong> Vagas Abertas</p>
-            <a href="#" class="botao-destaque">Quero ser Voluntário</a>
+            
+            <p style="margin-bottom: 0.5rem;">Este projeto precisa de voluntários</p>
+            
+            <p style="margin-bottom: 1.5rem;"><strong>${projeto.vagas_voluntarios}</strong> Vagas Abertas</p>
+            
+            <a href="/pages/contato.html" class="botao-destaque">Quero ser Voluntário</a>
           </div>
+
         </div>
       </div>
     </article>

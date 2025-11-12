@@ -1,8 +1,8 @@
 [
   {
     "id": "proj-01",
-    "titulo": "Reforço Escolar na Comunidade",
-    "resumo": "Aulas de matemática e português para crianças de 6 a 10 anos.",
+    "titulo": "Reforço escolar na comunidade",
+    "resumo": "Este projeto oferece aulas de reforço em matemática e português para crianças de 6 a 10 anos em situação de vulnerabilidade. Nosso objetivo é combater a evasão escolar e melhorar o desempenho acadêmico através de um ambiente acolhedor e estimulante no contra-turno escolar.",
     "imagem_capa": "/assets/images/projeto-reforco.jpg",
     "status": "Ativo",
     "meta_arrecadacao": 5000.00,
@@ -11,12 +11,22 @@
   },
   {
     "id": "proj-02",
-    "titulo": "Sopão Solidário Noturno",
-    "resumo": "Distribuição de alimentos para pessoas em situação de rua.",
+    "titulo": "Sopão solidário noturno",
+    "resumo": "Distribuição diária de refeições nutritivas e quentes para pessoas em situação de rua. Além do alimento, oferecemos escuta ativa e encaminhamento para serviços de assistência social da região.",
     "imagem_capa": "/assets/images/projeto-sopao.jpg",
     "status": "Ativo",
     "meta_arrecadacao": 3000.00,
     "valor_arrecadado": 2900.00,
     "vagas_voluntarios": 20
+  },
+  {
+    "id": "proj-03",
+    "titulo": "Cabide solidário",
+    "resumo": "Campanha permanente de arrecadação, triagem e doação de roupas, calçados e cobertores. Focamos em fornecer dignidade e proteção contra o frio para famílias carentes e moradores de rua.",
+    "imagem_capa": "/assets/images/projeto-roupas.jpg",
+    "status": "Ativo",
+    "meta_arrecadacao": 1500.00,
+    "valor_arrecadado": 450.00,
+    "vagas_voluntarios": 15
   }
 ]
