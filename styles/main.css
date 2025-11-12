@@ -26,6 +26,60 @@ body {
 /* === ESTILOS GLOBAIS (HEADER E FOOTER) === */
 
 header {
+
+  /* Estilos para a Logo */
+.logo-img {
+    height: 60px; /* Define a altura da logo (ajuste conforme necessário) */
+    width: auto;  /* A largura ajusta-se automaticamente para não distorcer */
+    display: block;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Ajuste para o Header ficar alinhado */
+header {
+    display: flex;
+    flex-direction: column; /* Coloca a logo e o nav um abaixo do outro no mobile */
+    align-items: center;    /* Centraliza os itens horizontalmente */
+    padding: 1rem 2rem;
+    width: 100%; /* Garante que o header ocupe toda a largura */
+}
+
+header nav {
+    margin-top: 1rem; /* Dá um espaço entre a logo e o menu */
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se não houver espaço */
+    justify-content: center; /* Centraliza os itens do menu */
+    gap: 1.5rem; /* Espaço entre os itens do menu */
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Media query para telas maiores: Logo à esquerda, Menu à direita e centralizado */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* Volta para linha (logo e menu lado a lado) */
+        justify-content: space-between; /* Logo esquerda, Nav direita */
+    }
+
+    header nav {
+        margin-top: 0; /* Remove a margem superior em desktop */
+        flex-grow: 1;   /* Faz o nav ocupar o espaço restante */
+        text-align: center; /* Tenta centralizar o texto dentro do nav */
+    }
+
+    header nav ul {
+        justify-content: center; /* Centraliza os itens do menu dentro do nav */
+        width: 100%; /* Garante que a UL ocupe a largura do nav */
+    }
+}
   background-color: var(--cor-primaria);
   color: white;
   padding: 1rem; /* 1rem = 16px (espaçamento interno) */
