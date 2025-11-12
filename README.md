@@ -81,7 +81,13 @@ O projeto foi construído utilizando a tríade fundamental da web, sem dependên
 
 ## 📂 Estrutura do Projeto
 
-/ ├── assets/ # Imagens e recursos estáticos ├── data/ # "Banco de dados" simulado (arquivos JSON) ├── includes/ # Fragmentos de HTML (Header/Footer) ├── pages/ # Páginas HTML do sistema ├── scripts/ # Lógica JavaScript (API, Controladores) ├── styles/ # Folhas de estilo CSS └── index.html # Página principal
+/ ├── assets/ # Imagens e recursos estáticos 
+  ├── data/ # "Banco de dados" simulado (arquivos JSON) 
+  ├── includes/ # Fragmentos de HTML (Header/Footer) 
+  ├── pages/ # Páginas HTML do sistema 
+  ├── scripts/ # Lógica JavaScript (API, Controladores) 
+  ├── styles/ # Folhas de estilo CSS 
+  └── index.html # Página principal
 
 ## 🛠️ Como Rodar o Projeto
 
