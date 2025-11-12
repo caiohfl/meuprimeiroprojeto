@@ -87,7 +87,7 @@ O projeto foi construído utilizando a tríade fundamental da web, sem dependên
   ├── pages/ # Páginas HTML do sistema 
   ├── scripts/ # Lógica JavaScript (API, Controladores) 
   ├── styles/ # Folhas de estilo CSS 
-  └── index.html # Página principal
+  └── index.html # Página principal.
 
 ## 🛠️ Como Rodar o Projeto
 
