@@ -1,41 +1,56 @@
-// /scripts/global.js
+// scripts/global.js
 
-// Função para buscar e injetar um componente HTML
+// ==============================================================
+// 1. FUNÇÃO PARA CARREGAR COMPONENTES (HEADER E FOOTER)
+// ==============================================================
 async function loadComponent(elementId, url) {
   try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Não foi possível carregar ${url}`);
+    const element = document.getElementById(elementId);
+    // Só tenta carregar se o elemento existir na página (evita erros)
+    if (element) {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      element.innerHTML = html;
     }
-    const html = await response.text();
-    document.getElementById(elementId).innerHTML = html;
   } catch (error) {
     console.error(error);
   }
 }
 
-// Quando o DOM estiver pronto, carrega os componentes comuns
+// Executa quando a página carrega
 document.addEventListener('DOMContentLoaded', () => {
+  // Carrega o Menu e o Rodapé
   loadComponent('main-header', '/includes/header.html');
   loadComponent('main-footer', '/includes/footer.html');
-});
-// ... código anterior ...
 
-// Lógica de Alto Contraste
-document.addEventListener('click', (e) => {
-  if(e.target && e.target.id === 'btn-contraste') {
-    document.body.classList.toggle('alto-contraste');
-    
-    // Salva a preferência do usuário no navegador
-    const ativado = document.body.classList.contains('alto-contraste');
-    localStorage.setItem('altoContraste', ativado);
-  }
-});
-
-// Verifica se o usuário já tinha ativado antes ao carregar a página
-document.addEventListener('DOMContentLoaded', () => {
+  // Verifica se o usuário já tinha ativado o Alto Contraste antes
   const preferencia = localStorage.getItem('altoContraste');
   if (preferencia === 'true') {
     document.body.classList.add('alto-contraste');
+  }
+});
+
+// ==============================================================
+// 2. LÓGICA DO BOTÃO DE ALTO CONTRASTE
+// ==============================================================
+
+// Usamos 'click' no documento inteiro porque o botão do header 
+// é carregado dinamicamente e pode não existir no primeiro segundo.
+document.addEventListener('click', (e) => {
+  
+  // O truque do CLOSEST:
+  // Verifica se clicou no botão OU em qualquer coisa DENTRO dele (ícone, texto)
+  const btn = e.target.closest('#btn-contraste');
+
+  if (btn) {
+    // 1. Liga ou Desliga a classe no corpo do site
+    document.body.classList.toggle('alto-contraste');
+    
+    // 2. Verifica se ficou ligado (true) ou desligado (false)
+    const ativado = document.body.classList.contains('alto-contraste');
+    
+    // 3. Salva essa escolha no navegador para não perder ao atualizar
+    localStorage.setItem('altoContraste', ativado);
   }
 });

@@ -2,272 +2,169 @@
    1. VARIÁVEIS E TEMAS
    ========================================= */
 :root {
-  /* Cores Padrão (Modo Claro) */
   --cor-primaria: #005A8D;     
   --cor-secundaria: #FFA500;   
   --cor-texto: #333;
   --cor-fundo: #f9f9f9;
-  --cor-header: #005A8D;
-  --cor-header-texto: white;
-  --fonte-principal: 'Arial', sans-serif;
+  --cor-header-bg: #005A8D;    
+  --cor-header-link: #FFFFFF;  
   --tamanho-container: 1100px;
+  --fonte-principal: 'Arial', sans-serif;
 }
 
-/* TEMA ALTO CONTRASTE (Modo Escuro Acessível) */
+/* MODO ALTO CONTRASTE (Escuro) */
 body.alto-contraste {
-  /* Fundo Preto, Texto Amarelo/Branco (Contraste Máximo) */
-  --cor-primaria: #FFFF00;     /* Amarelo Neon */
-  --cor-secundaria: #FFFFFF;   /* Branco */
-  --cor-texto: #FFFFFF;        /* Texto Branco */
-  --cor-fundo: #000000;        /* Fundo Preto Absoluto */
-  --cor-header: #1a1a1a;       /* Header Cinza Escuro */
-  --cor-header-texto: #FFFF00; /* Texto Amarelo */
+  --cor-primaria: #FFFF00;     
+  --cor-secundaria: #FFFFFF;   
+  --cor-texto: #FFFFFF;        
+  --cor-fundo: #000000;        
+  --cor-header-bg: #000000;    
+  --cor-header-link: #FFFF00;  
 }
 
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: var(--fonte-principal);
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: flex; flex-direction: column; min-height: 100vh;
 }
 
-/* Ajuste para links no Alto Contraste */
-body.alto-contraste a {
-  color: #FFFF00 !important; /* Força links amarelos */
-  text-decoration: underline;
-}
-body.alto-contraste .botao-destaque {
-  background-color: #FFFF00;
-  color: #000;
-  border: 2px solid #fff;
-}
-
-/* ... (Mantenha o resto do CSS igual, apenas verifique se o header usa var(--cor-header)) ... */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--fonte-principal);
-  color: var(--cor-texto);
-  background-color: var(--cor-fundo);
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
 /* =========================================
    2. CABEÇALHO (HEADER)
    ========================================= */
 header {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-header-bg); 
+  padding: 0.5rem 2rem;
   width: 100%;
-  height: 90px; /* Altura fixa */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  
-  /* Layout Mobile */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centraliza tudo no mobile */
+  gap: 1rem;
   position: relative;
   z-index: 100;
-  padding: 0 1rem;
 }
 
-/* LOGO (Transparente) */
 .logo-img {
-  height: 85px; /* Quase a altura da barra */
+  height: 85px;
   width: auto;
   object-fit: contain;
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
+  background: transparent;
 }
 
-/* MENU DE NAVEGAÇÃO */
 header nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
-  padding: 0;
-  margin: 0;
+  gap: 20px;
 }
 
 header nav a {
-  color: white;
+  color: var(--cor-header-link);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  font-size: 0.9rem;
 }
 
 header nav a:hover {
-  color: var(--cor-secundaria); /* Laranja no hover */
+  color: var(--cor-secundaria);
+  text-decoration: underline;
 }
 
-/* Esconde a logo no fluxo normal do mobile para não quebrar, 
-   vamos posicionar ela diferente no desktop */
-.logo-link {
-  display: none; /* No celular, focamos no menu. No PC ela aparece. */
-}
-/* (Se quiser a logo no celular também, avise que ajustamos, 
-    mas assim o menu fica limpo no centro) */
-
-
-/* =========================================
-   3. BANNER PRINCIPAL (HERO SECTION)
-   ========================================= */
-.hero-banner {
-  /* Fundo com imagem e filtro azulado */
-  background: linear-gradient(rgba(0, 90, 141, 0.8), rgba(0, 90, 141, 0.6)), 
-              url('/assets/images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  
-  height: 450px; /* Altura do banner */
-  width: 100%;
-  
+/* Botão de Acessibilidade */
+.btn-acessibilidade {
+  background: transparent;
+  border: 1px solid var(--cor-header-link);
+  color: var(--cor-header-link);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  color: white;
-  padding: 1rem;
+  gap: 5px;
 }
 
-.hero-banner h2 {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.btn-acessibilidade:hover {
+  background-color: rgba(255,255,255,0.2);
 }
 
 /* =========================================
-   4. CONTEÚDO PRINCIPAL
+   3. CONTEÚDO PRINCIPAL
    ========================================= */
-main {
-  flex: 1;
-  width: 100%;
-  padding: 0; /* Zero padding para o banner pegar a tela toda */
+main { flex: 1; width: 100%; padding: 0; }
+
+.container-limitado { 
+  max-width: var(--tamanho-container); 
+  margin: 0 auto; 
+  padding: 3rem 1rem; 
 }
 
-/* Container para limitar a largura do conteúdo (Projetos) */
-.container-limitado {
-  max-width: var(--tamanho-container);
-  margin: 0 auto; /* Centraliza o bloco */
-  padding: 3rem 1rem;
+.hero-banner {
+  background: linear-gradient(rgba(0, 90, 141, 0.8), rgba(0, 90, 141, 0.6)), 
+              url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600');
+  background-size: cover; background-position: center;
+  height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
 }
 
-/* Títulos das Seções */
-h1, h2, h3 {
-  color: var(--cor-primaria);
-  margin-bottom: 1rem;
-}
+.hero-banner h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
 
 .projetos-home h2 {
-  text-align: center; /* Centraliza "Nossos Projetos" */
+  text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
+  color: var(--cor-primaria);
 }
 
-/* Botões */
-.botao-destaque {
-  display: inline-block;
-  background-color: var(--cor-secundaria);
-  color: #333;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.botao-destaque:hover {
-  background-color: #e69500;
+.botao-destaque { 
+  background-color: var(--cor-secundaria); color: #333; padding: 1rem 2rem; text-decoration: none; font-weight: bold; border-radius: 5px; border: none; cursor: pointer; 
 }
 
 /* =========================================
-   5. CARDS DE PROJETOS
+   4. CARDS DE PROJETOS
    ========================================= */
-.card-projeto {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
+.card-projeto { 
+  background-color: white; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column; 
 }
 
-.card-projeto:hover {
-  transform: translateY(-5px);
+.card-projeto img { width: 100%; height: 200px; object-fit: cover; }
+
+.card-projeto h3 { padding: 1rem; color: var(--cor-primaria); }
+
+.card-projeto p { 
+  padding: 0 1rem 1rem 1rem; 
+  color: #666; 
+  flex-grow: 1; 
+  text-align: justify;
 }
 
-.card-projeto img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.card-projeto a { 
+  background-color: var(--cor-secundaria); 
+  color: #333; 
+  text-decoration: none; 
+  font-weight: bold; 
+  text-align: center; 
+  padding: 1rem; 
+  display: block; 
 }
 
-.card-projeto h3 {
-  font-size: 1.25rem;
-  padding: 1rem;
-}
-
-.card-projeto p {
-  padding: 0 1rem 1rem 1rem;
-  color: #666;
-  flex-grow: 1;
-}
-
-.card-projeto a {
-  background-color: var(--cor-secundaria);
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  padding: 1rem;
-  display: block;
-}
-
-.card-projeto a:hover {
-  background-color: #ffc240;
-}
-
-#projetos-destaque, #lista-todos-projetos {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
+/* Grids */
+#projetos-destaque, #lista-todos-projetos { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 
 /* =========================================
-   6. PÁGINA DE DETALHES
+   5. PÁGINA DE DETALHES
    ========================================= */
 .container-detalhe {
   max-width: 900px;
@@ -275,6 +172,7 @@ h1, h2, h3 {
   background: white;
   padding: 2rem;
   border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .detalhe-imagem-capa {
@@ -300,56 +198,63 @@ h1, h2, h3 {
 }
 
 /* =========================================
-   7. RODAPÉ (FOOTER)
+   6. RODAPÉ
    ========================================= */
-footer {
-  background-color: #333;
-  color: #f9f9f9;
-  height: 90px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: auto;
+footer { background-color: #333; color: #f9f9f9; height: 90px; display: flex; align-items: center; justify-content: center; margin-top: auto; }
+
+/* =========================================
+   7. ALTO CONTRASTE (CORREÇÕES FINAIS)
+   ========================================= */
+/* Aplica fundo escuro e borda amarela em TODOS os cards (Projetos, Detalhes, Missão/Visão) */
+body.alto-contraste .card-projeto,
+body.alto-contraste .container-detalhe,
+body.alto-contraste .meta-card,
+body.alto-contraste .missao-card, /* Correção Missão */
+body.alto-contraste .visao-card   /* Correção Visão */
+{
+  background-color: #222 !important; /* !important vence o style inline do HTML */
+  border: 1px solid #FFFF00 !important;
+  color: #FFFF00 !important;
+}
+
+/* Garante que textos dentro desses cards fiquem amarelos */
+body.alto-contraste .card-projeto h3,
+body.alto-contraste .card-projeto p,
+body.alto-contraste .missao-card h3,
+body.alto-contraste .visao-card h3,
+body.alto-contraste .missao-card p,
+body.alto-contraste .visao-card p 
+{
+  color: #FFFF00 !important;
+}
+
+/* Botão Ver Mais no Alto Contraste */
+body.alto-contraste .card-projeto a {
+  background-color: #000 !important; 
+  color: #FFFF00 !important;
+  border-top: 1px solid #FFFF00 !important;
 }
 
 /* =========================================
-   8. RESPONSIVIDADE (COMPUTADOR)
+   8. RESPONSIVIDADE (DESKTOP)
    ========================================= */
 @media (min-width: 768px) {
-  
-  /* Cabeçalho Desktop */
   header {
-    justify-content: center; /* Centraliza o menu */
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    align-items: center;
+    height: 100px;
   }
-
-  .logo-link {
-    display: block; /* Mostra a logo */
-    position: absolute; /* Cola ela na esquerda */
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  /* Grids */
-  #projetos-destaque, #lista-todos-projetos {
-    grid-template-columns: 1fr 1fr; /* 2 colunas */
-  }
+  .logo-link { justify-self: start; }
+  header nav { justify-self: center; }
+  .btn-acessibilidade { justify-self: end; }
   
-  .detalhe-metas {
-    flex-direction: row;
-  }
-  .meta-card {
-    flex: 1;
-  }
+  #projetos-destaque, #lista-todos-projetos { grid-template-columns: 1fr 1fr; }
+  .detalhe-metas { flex-direction: row; }
+  .meta-card { flex: 1; }
 }
 
 @media (min-width: 1024px) {
-  #projetos-destaque {
-    grid-template-columns: 1fr 1fr; /* Home mantém 2 ou 3 conforme preferir */
-  }
-  
-  #lista-todos-projetos {
-    grid-template-columns: 1fr 1fr 1fr; /* Lista completa com 3 colunas */
-  }
+  #projetos-destaque { grid-template-columns: 1fr 1fr 1fr; }
+  #lista-todos-projetos { grid-template-columns: 1fr 1fr 1fr; }
 }
