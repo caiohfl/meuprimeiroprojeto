@@ -1,20 +1,21 @@
-// Espera o DOM estar pronto
-document.addEventListener('DOMContentLoaded', () => {
-  carregarProjetosDestaque();
-});
+// scripts/main.js
+
+// SPA FIX: Chamamos a função direto, pois o HTML já foi injetado pelo Router
+carregarProjetosDestaque();
 
 async function carregarProjetosDestaque() {
-  // Encontra o local no HTML onde os projetos vão entrar
   const containerProjetos = document.getElementById('projetos-destaque');
   
+  // Verifica se o container existe (se estamos na Home)
   if (containerProjetos) {
     const projetos = await getProjetos();
-    const projetosDestaque = projetos.slice(0, 2); // Pega só 2 para a home
     
-    containerProjetos.innerHTML = ''; // Limpa o container
+    // Pega os 3 primeiros para destaque
+    const projetosDestaque = projetos.slice(0, 3); 
+    
+    containerProjetos.innerHTML = ''; 
 
     projetosDestaque.forEach(projeto => {
-      // Cria o HTML do "card" do projeto
       const cardHTML = `
         <article class="card-projeto">
           <img src="${projeto.imagem_capa}" alt="Capa do projeto ${projeto.titulo}">
@@ -23,7 +24,6 @@ async function carregarProjetosDestaque() {
           <a href="/pages/projeto-detalhe.html?id=${projeto.id}">Ver Mais</a>
         </article>
       `;
-      // Adiciona o novo card ao container
       containerProjetos.innerHTML += cardHTML;
     });
   }

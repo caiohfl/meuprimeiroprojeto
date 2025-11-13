@@ -1,0 +1,80 @@
+<section class="container-limitado" style="max-width: 800px; padding: 2rem 1rem; margin: 0 auto;">
+      
+  <h1 style="text-align: center; margin-bottom: 1rem;">Fale Conosco / Seja Voluntário</h1>
+  <p style="text-align: center; margin-bottom: 2rem; color: #555;">
+    Preencha seus dados abaixo para se cadastrar como voluntário ou enviar uma mensagem.
+  </p>
+  
+  <form id="form-completo" style="display: flex; flex-direction: column; gap: 2rem;">
+    
+    <fieldset style="border: 1px solid #ccc; padding: 1.5rem; border-radius: 8px;">
+      <legend style="padding: 0 10px; font-weight: bold; color: var(--cor-primaria);">Seus Dados</legend>
+      
+      <div style="display: grid; gap: 1rem;">
+        <div>
+          <label for="nome" style="display: block; margin-bottom: 5px;">Nome Completo *</label>
+          <input type="text" id="nome" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="cpf" style="display: block; margin-bottom: 5px;">CPF *</label>
+            <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+          </div>
+          <div>
+            <label for="nascimento" style="display: block; margin-bottom: 5px;">Data de Nascimento *</label>
+            <input type="date" id="nascimento" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="email" style="display: block; margin-bottom: 5px;">E-mail *</label>
+            <input type="email" id="email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+          </div>
+          <div>
+            <label for="telefone" style="display: block; margin-bottom: 5px;">Telefone/WhatsApp *</label>
+            <input type="tel" id="telefone" placeholder="(00) 00000-0000" maxlength="15" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset style="border: 1px solid #ccc; padding: 1.5rem; border-radius: 8px;">
+      <legend style="padding: 0 10px; font-weight: bold; color: var(--cor-primaria);">Endereço</legend>
+      
+      <div style="display: grid; gap: 1rem;">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem;">
+          <div>
+            <label for="cep" style="display: block; margin-bottom: 5px;">CEP *</label>
+            <input type="text" id="cep" placeholder="00000-000" maxlength="9" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+          </div>
+          <div>
+            <label for="endereco" style="display: block; margin-bottom: 5px;">Rua/Avenida *</label>
+            <input type="text" id="endereco" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="cidade" style="display: block; margin-bottom: 5px;">Cidade *</label>
+            <input type="text" id="cidade" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+          </div>
+          <div>
+            <label for="estado" style="display: block; margin-bottom: 5px;">Estado *</label>
+            <select id="estado" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+              <option value="">Selecione...</option>
+              <option value="SP">São Paulo</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="RS">Rio Grande do Sul</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    
+    <button type="submit" class="botao-destaque" style="border: none; cursor: pointer; font-size: 1.1rem; align-self: center;">Enviar Cadastro</button>
+  
+  </form>
+</section>
