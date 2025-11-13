@@ -1,27 +1,24 @@
-// /scripts/projetos.js
+// scripts/projetos.js
 
-document.addEventListener('DOMContentLoaded', () => {
-  carregarTodosProjetos();
-});
+// SPA FIX: Roda imediatamente
+carregarTodosProjetos();
 
 async function carregarTodosProjetos() {
   const container = document.getElementById('lista-todos-projetos');
   
-  // Busca os projetos
-  const projetos = await getProjetos(); 
-  
+  // Se o container não estiver na tela, para por aqui
   if (!container) return;
+
+  const projetos = await getProjetos(); 
   
   if (projetos.length === 0) {
     container.innerHTML = "<p style='text-align:center'>Nenhum projeto encontrado no momento.</p>";
     return;
   }
   
-  container.innerHTML = '';
+  container.innerHTML = ''; 
 
   projetos.forEach(projeto => {
-    // AQUI ESTAVA O ERRO: "class-=" agora virou "class="
-    // Isso vai fazer o CSS funcionar e o botão ficar laranja!
     const cardHTML = `
       <article class="card-projeto">
         <img src="${projeto.imagem_capa}" alt="Capa do projeto ${projeto.titulo}">

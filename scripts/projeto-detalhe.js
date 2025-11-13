@@ -62,7 +62,7 @@ function renderizarProjeto(projeto, container) {
             
             <p style="margin-bottom: 1.5rem;"><strong>${projeto.vagas_voluntarios}</strong> Vagas Abertas</p>
             
-            <a href="/pages/contato.html" class="botao-destaque">Quero ser Voluntário</a>
+            <a href="/#cadastro" class="botao-destaque">Quero ser Voluntário</a>
           </div>
 
         </div>

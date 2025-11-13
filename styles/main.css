@@ -1,14 +1,58 @@
 /* =========================================
-   1. VARIÁVEIS E RESET
+   1. VARIÁVEIS E TEMAS
    ========================================= */
 :root {
-  --cor-primaria: #005A8D;     /* Azul */
-  --cor-secundaria: #FFA500;   /* Laranja */
+  /* Cores Padrão (Modo Claro) */
+  --cor-primaria: #005A8D;     
+  --cor-secundaria: #FFA500;   
   --cor-texto: #333;
   --cor-fundo: #f9f9f9;
+  --cor-header: #005A8D;
+  --cor-header-texto: white;
   --fonte-principal: 'Arial', sans-serif;
   --tamanho-container: 1100px;
 }
+
+/* TEMA ALTO CONTRASTE (Modo Escuro Acessível) */
+body.alto-contraste {
+  /* Fundo Preto, Texto Amarelo/Branco (Contraste Máximo) */
+  --cor-primaria: #FFFF00;     /* Amarelo Neon */
+  --cor-secundaria: #FFFFFF;   /* Branco */
+  --cor-texto: #FFFFFF;        /* Texto Branco */
+  --cor-fundo: #000000;        /* Fundo Preto Absoluto */
+  --cor-header: #1a1a1a;       /* Header Cinza Escuro */
+  --cor-header-texto: #FFFF00; /* Texto Amarelo */
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ajuste para links no Alto Contraste */
+body.alto-contraste a {
+  color: #FFFF00 !important; /* Força links amarelos */
+  text-decoration: underline;
+}
+body.alto-contraste .botao-destaque {
+  background-color: #FFFF00;
+  color: #000;
+  border: 2px solid #fff;
+}
+
+/* ... (Mantenha o resto do CSS igual, apenas verifique se o header usa var(--cor-header)) ... */
 
 * {
   margin: 0;
