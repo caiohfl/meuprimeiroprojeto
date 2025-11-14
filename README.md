@@ -29,8 +29,8 @@ Este projeto é uma **Single Page Application (SPA)** desenvolvida como parte da
 
 A organização de pastas segue o padrão de separação de responsabilidades (MVC-like no Front-end):
 
+```text
 /
-
 ├── assets/          # Imagens e recursos estáticos
 ├── data/            # Fonte de dados (JSON) dos projetos
 ├── dist/            # Arquivos minificados (.min.css, .min.js) para produção
@@ -44,6 +44,7 @@ A organização de pastas segue o padrão de separação de responsabilidades (M
 │   └── global.js    # Carregador de componentes e Tema
 ├── styles/          # Estilização (CSS)
 └── index.html       # Shell da aplicação (Página Única)
+```
 
 ## ♿ Acessibilidade e Inclusão
 
