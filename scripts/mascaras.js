@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // MÁSCARA CPF (000.000.000-00)
   if(inputCPF) {
     inputCPF.addEventListener('input', (e) => {
-      let value = e.target.value.replace(/\D/g, ""); // Remove letras
+      let value = e.target.value.replace(/\D/g, "");
       value = value.replace(/(\d{3})(\d)/, "$1.$2");
       value = value.replace(/(\d{3})(\d)/, "$1.$2");
       value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // SE NÃO HOUVER ERROS:
       if (!temErro) {
         alert('Cadastro realizado com sucesso! Bem-vindo ao time.');
-        // Redireciona para a Home
+       
         window.location.href = '/'; 
       }
     });
@@ -88,33 +88,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Funções Auxiliares de Manipulação do DOM ---
 
-  // Cria e insere a mensagem de erro vermelha
   function mostrarErro(input, mensagem) {
     const erroElemento = document.createElement('span');
     erroElemento.className = 'msg-erro';
     erroElemento.innerText = mensagem;
     
-    // Estilos diretos via JS (Manipulação do DOM)
-    erroElemento.style.color = '#d9534f'; // Vermelho
+    erroElemento.style.color = '#d9534f'; 
     erroElemento.style.fontSize = '0.85rem';
     erroElemento.style.marginTop = '5px';
     erroElemento.style.display = 'block';
     erroElemento.style.fontWeight = 'bold';
     
-    // Muda a borda do input para vermelho
     input.style.border = '1px solid #d9534f';
-    
-    // Insere o span DEPOIS do input
+ 
     input.parentElement.appendChild(erroElemento);
   }
 
-  // Remove as mensagens antigas e reseta as bordas
   function limparErros() {
-    // Remove todos os spans de erro
     const erros = document.querySelectorAll('.msg-erro');
     erros.forEach(el => el.remove());
 
-    // Reseta a borda de todos os inputs
     const inputs = form.querySelectorAll('input');
     inputs.forEach(input => {
       input.style.border = '1px solid #ccc';
