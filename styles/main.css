@@ -3,9 +3,18 @@
    ========================================= */
 :root {
   --cor-primaria: #005A8D;     
+  --cor-primaria-claro: #0077b6; 
+  --cor-primaria-escuro: #003f63; 
+  
+
   --cor-secundaria: #FFA500;   
-  --cor-texto: #333;
+  --cor-secundaria-hover: #e69500; 
+  
+  --cor-texto: #333333;
+  --cor-texto-suave: #666666; 
   --cor-fundo: #f9f9f9;
+  --cor-branco: #ffffff;
+  
   --cor-header-bg: #005A8D;    
   --cor-header-link: #FFFFFF;  
   --tamanho-container: 1100px;
@@ -203,16 +212,16 @@ main { flex: 1; width: 100%; padding: 0; }
 footer { background-color: #333; color: #f9f9f9; height: 90px; display: flex; align-items: center; justify-content: center; margin-top: auto; }
 
 /* =========================================
-   7. ALTO CONTRASTE (CORREÇÕES FINAIS)
+   7. ALTO CONTRASTE
    ========================================= */
 /* Aplica fundo escuro e borda amarela em TODOS os cards (Projetos, Detalhes, Missão/Visão) */
 body.alto-contraste .card-projeto,
 body.alto-contraste .container-detalhe,
 body.alto-contraste .meta-card,
-body.alto-contraste .missao-card, /* Correção Missão */
-body.alto-contraste .visao-card   /* Correção Visão */
+body.alto-contraste .missao-card, 
+body.alto-contraste .visao-card   
 {
-  background-color: #222 !important; /* !important vence o style inline do HTML */
+  background-color: #222 !important; 
   border: 1px solid #FFFF00 !important;
   color: #FFFF00 !important;
 }

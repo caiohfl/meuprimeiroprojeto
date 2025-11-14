@@ -6,7 +6,6 @@ carregarTodosProjetos();
 async function carregarTodosProjetos() {
   const container = document.getElementById('lista-todos-projetos');
   
-  // Se o container não estiver na tela, para por aqui
   if (!container) return;
 
   const projetos = await getProjetos(); 

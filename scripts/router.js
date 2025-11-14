@@ -1,11 +1,10 @@
 // scripts/router.js
 
 // 1. Configuração das Rotas
-// Mapeia o "Link (#)" para o "Arquivo HTML" e o "Script" que ele precisa
 const rotas = {
     "#home": { 
         html: "/pages/home.html", 
-        script: "/scripts/main.js" // A Home precisa do main.js para carregar os cards
+        script: "/scripts/main.js" 
     },
     "#sobre": { 
         html: "/pages/sobre.html",
@@ -13,35 +12,33 @@ const rotas = {
     },
     "#projetos": { 
         html: "/pages/projetos.html", 
-        script: "/scripts/projetos.js" // Precisa do script para listar tudo
+        script: "/scripts/projetos.js" 
     },
     "#cadastro": { 
         html: "/pages/cadastro.html", 
-        script: "/scripts/mascaras.js" // Precisa das máscaras e validação
+        script: "/scripts/mascaras.js"
     },
-    // Rota padrão (se não tiver hash, vai para home)
     "/": { 
         html: "/pages/home.html", 
         script: "/scripts/main.js" 
     }
 };
 
-// 2. Função que faz a mágica (Navegação)
+// 2. Função Navegação
 async function navegar() {
     const main = document.querySelector('main');
     
-    // Pega o hash da URL (ex: #sobre) ou usa "/" se estiver vazio
+ 
     let hash = window.location.hash || "/";
 
-    // Se for a página de detalhes (que tem ?id=...), tratamos diferente
     if (window.location.pathname.includes('projeto-detalhe.html')) {
-        return; // Deixa o comportamento normal para a página de detalhes
+        return;
     }
 
     const destino = rotas[hash];
 
     if (!destino) {
-        // Se a rota não existe
+       
         main.innerHTML = "<h2 style='text-align:center; padding:5rem;'>Página não encontrada (404)</h2>";
         return;
     }
